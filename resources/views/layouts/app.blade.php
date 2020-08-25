@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -38,6 +43,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories.index') }}">Category</a>
+                        </li>
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
