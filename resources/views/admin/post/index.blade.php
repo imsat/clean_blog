@@ -94,11 +94,14 @@
                 "columns": [
                     { "data": "id" },
                     { "data": "title" },
-                    { "data": "category_name" },
+                    { "data": "category_name", "orderable": false },
                     { "data": "body" },
                     { "data": "created_at" },
-                    { "data": "options" }
-                ]
+                    { "data": "options", "orderable": false  }
+                ],
+                // "columnDefs": [
+                //     { "orderable": false, "targets": 5 }
+                // ]
 
             });
         });

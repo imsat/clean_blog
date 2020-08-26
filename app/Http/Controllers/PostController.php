@@ -25,15 +25,15 @@ class PostController extends Controller
      */
     public function getAllPost(Request $request)
     {
+//        return $request->all();
         $columns = array(
             0 =>'id',
             1 =>'title',
             2 =>'category_name',
             3=> 'body',
-            5=> 'created_at',
-            6=> 'id',
+            4=> 'created_at',
+            5=> 'options',
         );
-
         $totalData = Post::count();
 
         $totalFiltered = $totalData;
@@ -42,6 +42,9 @@ class PostController extends Controller
         $start = $request->input('start');
         $order = $columns[$request->input('order.0.column')];
         $dir = $request->input('order.0.dir');
+
+
+
 
         if(empty($request->input('search.value')))
         {
