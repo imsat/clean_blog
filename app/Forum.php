@@ -4,13 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Forum extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = ['title', 'body', 'category_id', 'user_id', 'image', 'status'];
 
     public function category()

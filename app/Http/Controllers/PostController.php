@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -14,8 +17,20 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category')->orderBy('id', 'desc')->get();
-        return view('admin.post.index', compact('posts'));
+//        $posts = Post::with('category')->orderBy('id', 'desc')->get();
+
+//        $user = Auth::User();
+//        $user = User::find(Auth::id());
+//        $posts = auth()->user()->posts;  // n+1 problem
+//        $posts = auth()->user()->load('posts');  // n+1 problem
+
+
+
+//        $user = auth()->user();
+//        $user->load('posts');
+//        $posts = $user->posts;
+        $categories = Category::all();
+        return view('admin.post.index', compact('categories'));
     }
 
     /**
@@ -81,8 +96,11 @@ class PostController extends Controller
                 $nestedData['category_name'] = $post->category->name;
                 $nestedData['body'] = substr(strip_tags($post->body),0,50)."...";
                 $nestedData['created_at'] = date('j M Y h:i a',strtotime($post->created_at));
-                $nestedData['options'] = "&emsp;<a href='{$show}' title='SHOW' >Show</a>
-                                          &emsp;<a href='{$edit}' title='EDIT' >Edit</a>";
+//                $nestedData['options'] = "&emsp;<a href='{$show}' title='SHOW' class='btn btn-primary btn-sm' >Show</a>
+//                                          &emsp;<a href='{$edit}' title='EDIT'  class='btn btn-info btn-sm' >Edit</a>";
+//                $nestedData['options'] = "&emsp;<a href='#' data-toggle='modal' data-toggle='modal' data-target='#postViewModal'  title='SHOW' class='btn btn-primary btn-sm' >Show</a>
+                $nestedData['options'] = "&emsp;<button type='button' onclick='openPostViewModal($post)' title='SHOW' class='btn btn-primary btn-sm' >Show</button>
+                                          &emsp;<a href='{$edit}' onclick='openPostEditModal($post)' title='EDIT'  class='btn btn-info btn-sm' >Edit</a>";
                 $data[] = $nestedData;
 
             }

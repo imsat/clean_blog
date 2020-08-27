@@ -7,7 +7,8 @@
                 <div class="card">
                     <div class="card-header">
                         Category
-                        <a href="{{route('categories.create')}}" class="btn btn-success btn-sm float-right">Add New</a>
+{{--                        <a href="{{route('categories.create')}}" class="btn btn-success btn-sm float-right">Add New</a>--}}
+                        <a href="#" data-toggle="modal" data-target="#categoryCreate" class="btn btn-success btn-sm float-right">Add New</a>
                     </div>
 
                     <div class="card-body">
@@ -59,6 +60,35 @@
 
                         {{$categories->links()}}
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Create Modal -->
+        <div class="modal fade" id="categoryCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Category Create</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{Form::open(['route' => 'categories.store', 'method' => 'POST' ])}}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name">Category Name</label>
+                            <input type="text" name="name" class="form-control" id="name" >
+                            <span class="text-danger ">{{$errors->has('name') ? $errors->first('name') : ''}}</span>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    {{Form::close()}}
                 </div>
             </div>
         </div>

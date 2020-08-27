@@ -2,9 +2,8 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontEndController@index');
+Route::get('/posts/details/{post}', 'FrontEndController@getSinglePost')->name('get.single.posts');
 
 Auth::routes();
 
@@ -16,3 +15,7 @@ Route::resource('/categories', 'CategoryController');
 
 Route::post('allposts', 'PostController@getAllPost')->name('allposts');
 Route::resource('/posts', 'PostController');
+Route::resource('/forums', 'ForumController');
+//Route::resource('/comments', 'CommentController');
+Route::post('/comments/post/{post}', 'CommentController@postCommentStore')->name('posts.comments.store');
+//Route::post('/comments/forum/{forum}', 'CommentController@forumCommentStore')->name('forums.comments.store');
