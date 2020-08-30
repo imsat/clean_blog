@@ -7,6 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- App Url -->
+    <meta name="app-url" content="{{ url('/') }}">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
@@ -41,7 +44,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Public Forum</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
