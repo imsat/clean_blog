@@ -61,6 +61,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('forums.index') }}">Forum</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories.trash') }}">Category Trash</a>
+                        </li>
                     @endauth
                 <!-- Authentication Links -->
                     @guest

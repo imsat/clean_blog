@@ -113,4 +113,25 @@ class CategoryController extends Controller
         return redirect('/categories')->with('status', 'Updated successful');
 
     }
+
+
+    public function getCategoryTrash()
+    {
+//        $trashCategories = Category::withTrashed()->get();
+        $trashCategories = Category::onlyTrashed()->get();
+
+        return view('admin.category.trash', compact('trashCategories'));
+
+    }
+
+    public function restoreCategory($id)
+    {
+        $category = Category::onlyTrashed()->findOrFail($id);
+//        dd($category);
+
+        $category->restore();
+
+        return redirect('/categories/trash')->with('status', 'Restored successful');
+
+    }
 }

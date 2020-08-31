@@ -11,10 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c64bdb6-2671-41b1-bdc4-920382fbb7ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/trash.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_23_074434_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_23_074434_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,12 +132,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/forum" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/category" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Satyajit\xampp\htdocs\clean_blog\resources\views\admin\category" />
       <recent name="E:\Satyajit\xampp\htdocs\clean_blog\resources\views\admin\forum" />
       <recent name="E:\Satyajit\xampp\htdocs\clean_blog\resources\views\admin\post" />
     </key>
@@ -164,7 +167,7 @@
       <workItem from="1598504561568" duration="14364000" />
       <workItem from="1598762397552" duration="12359000" />
       <workItem from="1598847032209" duration="1990000" />
-      <workItem from="1598860871190" duration="278000" />
+      <workItem from="1598860871190" duration="3592000" />
     </task>
     <servers />
   </component>
