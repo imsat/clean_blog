@@ -46,6 +46,8 @@ class PostController extends Controller
             ->latest()
             ->get();
 
+//        dd($posts);
+
 //        return view('admin.post.index',compact('posts','categories'));
         return view('admin.post.index', compact('posts', 'categories', 'tags'));
 

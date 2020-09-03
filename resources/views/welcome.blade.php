@@ -1,5 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app-old')
 
+@section('title')
+{{--    {{trans('words.page_title')}}--}}
+{{--    @lang('words.page_title')--}}
+{{ __('words.page_title') }}
+@endsection
 @section('content')
     <div class="container">
         <div class="row ">
@@ -17,6 +22,14 @@
             @endforeach
         </div>
         <div class="row justify-content-center">{{$posts->links()}}</div>
+
+        <div class="row text-center">
+
+{{--            <hi class="display-1">{{trans('words.page_description')}}</hi>--}}
+{{--            <hi class="display-1">@lang('words.page_description')</hi>--}}
+            <hi class="display-1">{{__('words.page_description')}}</hi>
+
+        </div>
 
     </div>
 @endsection

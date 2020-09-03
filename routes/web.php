@@ -1,6 +1,10 @@
 <?php
 
-
+// Locale
+Route::get('/locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return redirect()->back()->with('success', 'Language changed');
+})->name('locale.set');
 
 Route::get('/', 'FrontEndController@index');
 Route::get('/posts/details/{post}', 'FrontEndController@getSinglePost')->name('get.single.posts');
