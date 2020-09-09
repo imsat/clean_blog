@@ -23,11 +23,6 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany('App\Tag');
-    }
-
     public function comments()
     {
         return $this->morphMany('App\Comment', 'commentable');

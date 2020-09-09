@@ -45,7 +45,7 @@ class CategoryController extends Controller
 
         Category::create($request->all());
 
-        return redirect('/categories')->with('success', 'Created successful');
+        return redirect('/categories')->with('status', 'Created successful');
 
     }
 
@@ -86,23 +86,19 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->all());
-        return redirect('/categories')->with('success', 'Updated successful');
+        return redirect('/categories')->with('status', 'Updated successful');
     }
 
     /**
-     * @param Category $category
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * @throws \Exception
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
-        if($category->posts->count()  === 0){
-            $category->delete();
-        return redirect('/categories')->with('success', 'Deleted successful');
-        }else {
-            return redirect('/categories')->with('error', "Unable to delete, it's being used by another program!!");
-        }
-
+       $category->delete();
+        return redirect('/categories')->with('status', 'Deleted successful');
     }
 
     /**
@@ -114,26 +110,7 @@ class CategoryController extends Controller
             'status' => !$category->status
         ]);
 
-        return redirect('/categories')->with('success', 'Updated successful');
-
-    }
-
-
-    public function getCategoryTrash()
-    {
-//        $trashCategories = Category::withTrashed()->get();
-        $trashCategories = Category::onlyTrashed()->get();
-
-        return view('admin.category.trash', compact('trashCategories'));
-
-    }
-
-    public function restoreCategory($id)
-    {
-        $category = Category::onlyTrashed()->findOrFail($id);
-        $category->restore();
-
-        return redirect('/categories/trash')->with('success', 'Restored successful');
+        return redirect('/categories')->with('status', 'Updated successful');
 
     }
 }
